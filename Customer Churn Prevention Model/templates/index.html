@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Customer Churn Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <img
+        src="{{ url_for('static', filename='images/logo.png') }}"
+        alt="Logo"
+      />
+      <h1>Customer Churn Prediction</h1>
+    </header>
+    <main>
+      <img
+        src="{{ url_for('static', filename='images/banner.jpeg') }}"
+        alt="banner"
+      />
+      <form action="{{ url_for('signup') }}" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+        <button type="submit">Sign Up</button>
+      </form>
+      <a href="{{ url_for('login') }}">Already have an account? Login here</a>
+    </main>
+  </body>
+</html>

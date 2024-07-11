@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Customer Churn Prediction - Predict</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <img
+        src="{{ url_for('static', filename='images/logo.png') }}"
+        alt="Logo"
+      />
+      <h1>Customer Churn Prediction</h1>
+    </header>
+    <main>
+      <form action="{{ url_for('predict') }}" method="post">
+        {% for col in columns %}
+        <label for="{{ col }}">{{ col }}:</label>
+        <input type="text" id="{{ col }}" name="{{ col }}" required />
+        {% endfor %}
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <button type="submit">Predict</button>
+      </form>
+    </main>
+  </body>
+</html>
